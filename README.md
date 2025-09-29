@@ -12,6 +12,7 @@ void loop(){
 ```
 
 ### Interfaz II ejercicio número 2: led parpadeante
+```js
 void setup() {  // Configuración inicial (ej: pines como entrada/salida)
   pinMode(13, OUTPUT);// Pin 13 como salida
   pinMode(8, OUTPUT);
@@ -28,9 +29,11 @@ void loop() {   // Se repite infinitamente
   digitalWrite(8, LOW);   // Apagar LED
   delay(500);             // Esperar 1 segundo
 }
+```
 
 
 ### Interfaz II ejercicio número 3: led pulsador
+```js
 void setup() {
   pinMode(2, INPUT);  // Botón como entrada
   pinMode(13, OUTPUT);
@@ -41,7 +44,8 @@ void loop() {
   } else {
     digitalWrite(13, LOW);
   }
-
+}
+```
   
 
 ###Interfaz II ejercicio número 4: led potenciomentro
