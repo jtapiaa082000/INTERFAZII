@@ -29,6 +29,7 @@ void loop() {   // Se repite infinitamente
   digitalWrite(8, LOW);   // Apagar LED
   delay(500);             // Esperar 1 segundo
 }
+img/led parpadeante.png
 ```
 
 
