@@ -368,3 +368,38 @@ void playTrack(int index) {
   currentTrack = index;
 }
 ```
+código ejercicio personal
+```js
+Potenciómetro → pin central a A0, extremos a 5V y GND.
+
+LED 1 → pin 9 (con resistencia 220Ω a GND).
+
+LED 2 → pin 10 (con resistencia 220Ω a GND).
+
+// Pines
+const int potPin = A0;   // Potenciómetro
+const int led1 = 9;      // LED 1 (pin PWM)
+const int led2 = 10;     // LED 2 (pin PWM)
+
+void setup() {
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valorPot = analogRead(potPin);       // Lee valor del potenciómetro (0–1023)
+  int brillo = map(valorPot, 0, 1023, 0, 255); // Lo convierte a rango PWM (0–255)
+
+  // Controla intensidad de los LEDs
+  analogWrite(led1, brillo);
+  analogWrite(led2, brillo);
+
+  // Muestra valor en monitor serial (opcional)
+  Serial.print("Valor potenciómetro: ");
+  Serial.print(valorPot);
+  Serial.print("  | Brillo LEDs: ");
+  Serial.println(brillo);
+
+  delay(50);
+}
