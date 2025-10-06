@@ -404,6 +404,6 @@ void loop() {
   
   delay(100);  // Esperar un poco antes de volver a leer el valor del potenciómetro
 hecho con chat gpt
-<img src="
+<img src="https://raw.githubusercontent.com/jtapiaa082000/INTERFAZII/refs/heads/main/Captura%20de%20pantalla%202025-10-06%20104226.png"/>
 }
 ```
