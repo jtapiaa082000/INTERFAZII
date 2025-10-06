@@ -49,6 +49,7 @@ void loop() {
   
 
 ###Interfaz II ejercicio número 4: led potenciomentro
+```js
 void setup() {
   pinMode(9, OUTPUT);  // Pin PWM (símbolo ~)
 }
@@ -57,10 +58,11 @@ void loop() {
   int brillo = map(valor, 0, 1023, 0, 255);  // Convertir a rango PWM
   analogWrite(9, brillo);               // Ajustar brillo
 }
+```
 
 ###Interfaz II ejercicio número 5: semáforo
+```js
 // C++ code - Semáforo Autos y Peatones
-
 // Definición de pines
 int LED_1 = 6;  // Luz roja autos
 int LED_2 = 7;  // Luz amarilla autos
@@ -103,11 +105,13 @@ void loop() {
   digitalWrite(LED_5, HIGH);  // Rojo peatones encendido
   delay(2000); // 2 segundos
 }
+```
 
 ####Interfaz II ejercicio número 6: semáforo parpadeante
+```js
 ##### ejercicio n°6: semaforo parpadeante
 
-```js
+
 // C++ code - Semáforo Autos y Peatones
 
 // Definición de pines
@@ -169,8 +173,11 @@ void loop() {
   digitalWrite(LED_5, HIGH);  // Rojo peatones encendido
   delay(2000); // 2 segundos
 }
+```
 
 ####ejercicio número 7
+```js
+
 import processing.serial.*;
 
 Serial myPort;
@@ -227,7 +234,10 @@ class CircleData {
     this.size = size;
   }
 }
+```
 ####Ejercicio número 8: if else
+```js
+
 int valor;  // aquí guardaremos la lectura del sensor
 
 void setup() {
@@ -247,8 +257,9 @@ void loop() {
 
   delay(500); // medio segundo entre lecturas
 }
-
+```
 ####Ejercicio número 9: for if
+```js
 
 int leds[] = {2, 3, 4, 5}; // Creamos un arreglo con los pines donde van conectados los LEDs
 
@@ -270,8 +281,10 @@ void loop() {
     delay(500);                         // Espera 0,5 segundos antes de pasar al siguiente
   }
 }
-
+```
 Ejercicio número 10: botonera con sonido
+```js
+
 
 import processing.sound.*;
 
@@ -354,3 +367,4 @@ void playTrack(int index) {
   // Actualizamos la variable para saber cuál es la pista activa
   currentTrack = index;
 }
+```
