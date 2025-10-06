@@ -370,36 +370,40 @@ void playTrack(int index) {
 ```
 código ejercicio personal
 ```js
-Potenciómetro → pin central a A0, extremos a 5V y GND.
-
-LED 1 → pin 9 (con resistencia 220Ω a GND).
-
-LED 2 → pin 10 (con resistencia 220Ω a GND).
-
-// Pines
-const int potPin = A0;   // Potenciómetro
-const int led1 = 9;      // LED 1 (pin PWM)
-const int led2 = 10;     // LED 2 (pin PWM)
+// Definir los pines
+const int potPin = A0;    // Pin analógico para el potenciómetro
+const int led1Pin = 9;    // Pin digital para el primer LED
+const int led2Pin = 10;   // Pin digital para el segundo LED
 
 void setup() {
-  pinMode(led1, OUTPUT);
-  pinMode(led2, OUTPUT);
-  Serial.begin(9600);
+  // Configurar los pines como salidas
+  pinMode(led1Pin, OUTPUT);
+  pinMode(led2Pin, OUTPUT);
+  Serial.begin(9600);  // Para monitorear valores en el puerto serie
 }
 
 void loop() {
-  int valorPot = analogRead(potPin);       // Lee valor del potenciómetro (0–1023)
-  int brillo = map(valorPot, 0, 1023, 0, 255); // Lo convierte a rango PWM (0–255)
+  int potValue = analogRead(potPin);  // Leer el valor del potenciómetro (0-1023)
+  
+  // Mapear el valor del potenciómetro a un rango de 0-255 para el brillo del LED
+  int led1Brightness = map(potValue, 0, 1023, 0, 255);
+  
+  // Controlar el primer LED (brillo proporcional al valor del potenciómetro)
+  analogWrite(led1Pin, led1Brightness);
+  
+  // Controlar el segundo LED (encendido/apagado según un umbral del potenciómetro)
+  if (potValue > 512) {  // Si el valor del potenciómetro es mayor que el umbral
+    digitalWrite(led2Pin, HIGH);  // Encender el LED
+  } else {
+    digitalWrite(led2Pin, LOW);   // Apagar el LED
+  }
 
-  // Controla intensidad de los LEDs
-  analogWrite(led1, brillo);
-  analogWrite(led2, brillo);
-
-  // Muestra valor en monitor serial (opcional)
-  Serial.print("Valor potenciómetro: ");
-  Serial.print(valorPot);
-  Serial.print("  | Brillo LEDs: ");
-  Serial.println(brillo);
-
-  delay(50);
+  // Mostrar el valor del potenciómetro en el monitor serial
+  Serial.print("Valor del potenciómetro: ");
+  Serial.println(potValue);
+  
+  delay(100);  // Esperar un poco antes de volver a leer el valor del potenciómetro
+hecho con chat gpt
+<img src="
 }
+```
